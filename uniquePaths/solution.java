@@ -35,6 +35,20 @@ class Solution {
         return maze[m-1][n-1];
     }
     
+
+//DP table for a input of m = 3 and n =7
+    //  1 1 1
+    //  1 2 3
+    //  1 3 6
+    //  1 4 10
+    //  1 5 15
+    //  1 6 21
+    //  1 7 28
+    
+// Answer is 28
+
+
+
     //     public int uniquePaths(int m, int n) {
         
         
