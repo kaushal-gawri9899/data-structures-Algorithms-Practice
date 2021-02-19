@@ -15,8 +15,9 @@ class Solution {
         map.put("8","tuv");
         map.put("9","wxyz");
 
-
+        if(digits.length()!=0)
         letterCombinationsHelper("",digits);
+        
         return solution;
 
     }
