@@ -16,8 +16,7 @@ class Solution {
         map.put("9","wxyz");
 
         if(digits.length()!=0)
-        letterCombinationsHelper("",digits);
-        
+        letterCombinationsHelper("",digits);        
         return solution;
 
     }
