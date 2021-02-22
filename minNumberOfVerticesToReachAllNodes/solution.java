@@ -15,7 +15,6 @@ class Solution {
         //The vertices with zero inDegree should be selected as the set of vertices to reach all                nodes
         
         int[] inDegree = new int[n];
-        int[] outDegree = new int[n];
         
         List<Integer> smallestSet = new ArrayList();
         
@@ -23,8 +22,7 @@ class Solution {
         {
             int p1 = l.get(0);
             int p2 = l.get(1);
-            
-            outDegree[p1]++;
+
             inDegree[p2]++;
         }
         
