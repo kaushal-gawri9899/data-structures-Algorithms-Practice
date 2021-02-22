@@ -20,9 +20,8 @@ class Solution {
         
         for(List<Integer> l : edges)
         {
-            int p1 = l.get(0);
             int p2 = l.get(1);
-
+            
             inDegree[p2]++;
         }
         
