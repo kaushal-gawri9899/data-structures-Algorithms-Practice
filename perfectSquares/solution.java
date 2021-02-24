@@ -8,17 +8,6 @@
 class Solution {
     public int numSquares(int n) {
         
-        //n = 12
-        /**
-         * end = 0
-         * squares = 0 ,1, 4, 5,8,9 
-         * visited = 0 ,1, 4, 5,8,9
-         * end = 1, elem = 0, value = 1
-         * end = 1 , elem = 0, value = 4
-         * 
-         * size = 3, end = 2, elem = 4, value = 4+1, value = 4+4, value = 4+4+9(break)
-         * size =2, end =3, elem = 8, value = 8+1, value =8+4 = 12, returns here
-         */
         // Queue<Integer> squares = new LinkedList();
         LinkedList<Integer> squares = new LinkedList();
         
@@ -60,5 +49,31 @@ class Solution {
         }
         
         return end;
+        
+        //Using the same logic but starting from the end of the linkedlist
+//         LinkedList<Integer> squares = new LinkedList();
+//         HashSet<Integer> visited = new HashSet<>();
+        
+//         squares.add(n);
+        
+//         for(int index=0; !squares.isEmpty(); index++)
+//         {
+//             for(int i=squares.size(); i>0; i--)
+//             {
+//             int value = squares.poll();
+//             if(value==0)
+//                 return index;
+            
+//             for(int j=1; j*j<=value; j++)
+//             {
+//                 if(visited.add(value-j*j))
+//                 {
+//                     //visited.add(value-j*j);
+//                     squares.offer(value-j*j);
+//                 }
+//             }
+//             }
+//         }
+//         return 0;
     }
 }
