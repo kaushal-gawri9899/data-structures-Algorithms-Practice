@@ -22,7 +22,7 @@ class Solution {
         //Then we can use dfs to travel and return all nodes that match the distance K
         
         searchNode(root,target);
-        List<Integer> solution = new LinkedList();
+        List<Integer> solution = new ArrayList();
         int path = map.get(root);
         
         dfs(root,target,K, map.get(root), solution);
