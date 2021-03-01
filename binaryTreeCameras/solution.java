@@ -43,43 +43,43 @@ class Solution {
     
     */
 
-// Lets say if a node needs a camera that is it is a node having a child as leaf, we increase the count and return 1
-// Lets say it is covered that is a node having a child whose a parent of leaf node, we return -1 
-//Else we return 0
+// Lets say if a node needs a camera that is it is a node having a child as leaf, we increase the count and return "Covering"
+// Lets say it is covered, that is a node having a child whose a parent of leaf node, we return "Covered"
+//Else we return "Not_Covered"
 public int minCameraCover(TreeNode root) {
     
-    //If 0 is returned, it means that we need to make our root covered and hence we increase the count by 1
-    if(dfs(root)==0)
+    //If Not_Covered is returned, it means that we need to make our root covered and hence we increase the count by 1
+    if(dfs(root).equals("Not_Covered"))
         return count+1;
-    //If zero is not returned, our root is already covered and we just return the count
+    //If Not_Covered is not returned, our root is already covered and we just return the count
     else
         return count;
 
     
 }
 
-private int dfs(TreeNode root)
+private String dfs(TreeNode root)
 {
     if(root==null)
     {
-        return -1;
+        return "Covered";
     }
     
-    int left = dfs(root.left);
-    int right = dfs(root.right);
+    String left = dfs(root.left);
+    String right = dfs(root.right);
     
-    //As the returned value is zero, it means the given node is not covered and thus we increase the count and return 1 (returning 1 works like marking this node)
-    if(left==0 || right==0)
+    //As the returned value is "Not_Covered", it means the given node is not covered and thus we increase the count and return "Covering" (returning this works like marking this node)
+    if(left.equals("Not_Covered") || right.equals("Not_Covered"))
     {
         this.count++;
-        return 1;
+        return "Covering";
     }
     
-    //It means the node is covered, thus we return -1
-    if(left==1 || right==1)
-        return -1;
-    //The node is not covered and hence return 0
+    //It means the node is being covered, thus we return "Covered"
+    if(left.equals("Covering") || right.equals("Covering"))
+        return "Covered";
+    //The node is not covered and hence return "Not_Covered"
     else
-        return 0;
+        return "Not_Covered";
 }
 }
