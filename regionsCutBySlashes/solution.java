@@ -87,6 +87,8 @@ class Solution {
         }
         
         int region=0;
+        
+        //To use bfs just uncomment the bfs method call and bfs method implementation
         for(int i=0; i<3*len; i++)
         {
             for(int j=0; j<3*len; j++)
@@ -95,11 +97,13 @@ class Solution {
                 {
                     region++;
                     dfs(graph,i,j);
+                   // bfs(graph,i,j);
                 }
             }
         }
         
         return region;
+        
         
     }
     
@@ -117,4 +121,35 @@ class Solution {
         dfs(graph,i,j-1);
         
     }
+    
+//     private void bfs(int[][] graph, int i, int j)
+//     {
+//         Queue<int[]> queue = new LinkedList();
+        
+        
+//         queue.offer(new int[]{i,j});
+        
+//         int[][] directions = new int[][]{{1,0},{0,1},{-1,0},{0,-1}};
+        
+//         graph[i][j]=1;
+//         while(!queue.isEmpty())
+//         {
+//             int size = queue.size();
+//                 int[] current = queue.poll();
+//                 for(int[] d : directions)
+//                 {
+//                     int row = current[0]+d[0];
+//                     int col = current[1]+d[1];
+                    
+//                     if(row<0 || col<0 || row>=graph.length || col>=graph[0].length || graph[row][col]!=0)
+//                         continue;
+                    
+//                     queue.offer(new int[]{row,col});
+//                     graph[row][col]=1;
+//                 }
+
+            
+//         }
+
+//     }
 }
